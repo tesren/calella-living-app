@@ -1,0 +1,149 @@
+@import 'bootstrap/dist/css/bootstrap.css';
+@import url('all.min.css');
+@import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+:root{
+    --green: #626B21;
+    --darkgreen: #374D29;
+    --brown: #8C5532;
+    --white:#FCF6F0;
+}
+
+@font-face {
+    font-family: 'Marquez';
+    src: url('../webfonts/Marquez.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family: "League Spartan", serif;
+    background-color: var(--white);
+    color: var(--darkgreen);
+}
+
+.mt-6{
+    margin-top: 6rem !important;
+}
+
+.mb-6{
+    margin-bottom: 6rem !important;
+}
+
+.my-6{
+    margin-top: 6ch !important;
+    margin-bottom: 6rem !important;
+}
+
+.row{
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: "Marquez", serif;
+    color: var(--green);
+}
+
+.bg-darkgreen{
+    background-color: var(--darkgreen);
+    color: var(--white);
+}
+
+.bg-brown{
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+.bg-white{
+    background-color: var(--white) !important;
+}
+
+.ff-marquez{
+    font-family: "Marquez", serif;
+}
+
+.text-brown{
+    color: var(--brown);
+}
+
+.text-darkgreen{
+    color: var(--darkgreen);
+}
+
+.le-3{
+    letter-spacing: 3px;
+}
+
+[data-fancybox]:hover{
+    cursor: pointer;
+}
+
+.bg-success {
+    background-color: var(--green) !important;
+}
+
+.btn-brown{
+    background-color: var(--brown);
+    color: var(--white);
+    font-family: "Marquez", serif;
+}
+
+.btn-brown:hover{
+    background-color: #744427;
+    color: var(--white);
+}
+
+.btn-green{
+    background-color: var(--darkgreen);
+    color: var(--white);
+}
+
+.btn-green:hover{
+    background-color: #233418;
+    color: var(--white);
+}
+
+.btn-light{
+    background-color: var(--white);
+    color: var(--darkgreen) !important;
+}
+
+.form-control {
+    color: var(--bs-body-color);
+    background-color: transparent;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-radius: 0px;
+}
+
+.inventory-img{
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+
+    .mt-6{
+        margin-top: 3.5rem !important;
+    }
+    
+    .mb-6{
+        margin-bottom: 3.5rem !important;
+    }
+    
+    .my-6{
+        margin-top: 3.5rem !important;
+        margin-bottom: 3.5rem !important;
+    }
+
+    .fs-0{
+        font-size: 70px;
+    }
+
+    .inventory-img{
+        width: 200%;
+    }
+
+}
