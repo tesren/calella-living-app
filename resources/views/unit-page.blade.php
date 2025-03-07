@@ -74,7 +74,9 @@
 
                 <h1 class="text-brown mb-0">{{__('Departamento')}}  {{$unit->name}}</h1>
                 
-                <div class="fs-1 fw-semibold mb-5">${{ number_format($unit->price) }} {{$unit->currency}}</div>
+                @if ( $unit->price != 0 and $unit->status == 'Disponible' )
+                    <div class="fs-1 fw-semibold mb-5">${{ number_format($unit->price) }} {{$unit->currency}}</div>
+                @endif
 
                 <h2 class="text-brown">{{__('Características')}}</h2>
 
@@ -89,7 +91,12 @@
                     </div>
 
                     <div class="col-12 col-lg-2">
-                        <i class="fa-solid fa-arrow-turn-up"></i> {{__('Piso')}} {{$unit->floor}} 
+                        <i class="fa-solid fa-arrow-turn-up"></i> 
+                        @if ($unit->floor == 0)
+                            {{__('Planta baja')}}
+                        @else
+                            {{__('Piso')}} {{$unit->floor}}
+                        @endif 
                     </div>
 
                     <div class="col-12 col-lg-4">
@@ -149,41 +156,91 @@
             <div class="col-12 col-lg-4 position-relative">
 
                 <div class="sticky-top">
-                    <a href="#contact-section" class="btn btn-brown fs-5 py-3 px-5 my-5">
-                        {{__('Ponte en contacto con nosotros')}}
-                    </a>
+
+                    <div class="text-center">
+                        <a href="#contact-section" class="btn btn-green fs-5 py-3 px-5 my-5 ff-marquez">
+                            <i class="fa-brands fa-whatsapp"></i> {{__('Contáctanos por WhatsApp')}}
+                        </a>
+                    </div>
     
     
-                    {{-- Plan de pago --}}
-                    <h3 class="mb-3 text-brown fs-2">{{__('Plan de pago')}}</h3>
-    
-                    @foreach ($unit->paymentPlans as $plan)
-    
-                        @php
-                            $total = $unit->price;
-                            $down_payment = $total * ($plan->down_payment / 100);
-                            $monthly_payment = $total *  ($plan->months_percent/100);
-                            $closing_payment = $total * ($plan->closing_payment / 100);
-                        @endphp
-                    
-                        <ul class="list-unstyled fs-4">
-                            <li>
-                                <strong>+ {{__('Enganche')}} {{$plan->down_payment}}%: </strong>
-                                <span>${{ number_format($down_payment) }} {{$unit->currency}}</span>
-                            </li>
-    
-                            <li>
-                                <strong>+ {{$plan->months_quantity}} {{__('Mensualidades')}} {{$plan->months_percent}}%: </strong>
-                                <span>${{ number_format($monthly_payment) }} {{$unit->currency}}</span>
-                            </li>
-    
-                            <li>
-                                <strong>+ {{__('Crédito')}} {{$plan->closing_payment}}%: </strong>
-                                <span>${{ number_format($closing_payment) }} {{$unit->currency}}</span>
-                            </li>
+                    {{-- Planes de pago --}}
+                    @if ( $unit->price != 0 and $unit->status == 'Disponible' )
+
+                        <h3 class="mb-3 text-brown fs-2 text-center">{{__('Planes de pago')}}</h3>
+
+                        <ul class="nav nav-pills mb-0 justify-content-center bg-darkgreen rounded-top-3 overflow-hidden" id="pills-tab" role="tablist">
+
+                            @php
+                                $i = 0;
+                            @endphp
+
+                            @foreach ($unit->paymentPlans as $plan)
+
+                                <li class="nav-item col text-center" role="presentation">
+                                    <button class="nav-link rounded-0 fs-5 w-100 @if($i == 0) active @endif" id="pills-{{$plan->id}}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{$plan->id}}" type="button" role="tab" aria-controls="pills-{{$plan->id}}" aria-selected="true">
+                                        {{$plan->name}}
+                                    </button>
+                                </li>
+
+                                @php
+                                    $i++;
+                                @endphp
+
+                            @endforeach
+                            
                         </ul>
+
+                        <div class="tab-content plans p-3 p-lg-4 rounded-bottom-3" id="pills-tabContent">
+
+                            @php
+                                $i = 0;
+                            @endphp
+
+                            @foreach ($unit->paymentPlans as $plan)
+                                <div class="tab-pane fade @if($i == 0) show active @endif" id="pills-{{$plan->id}}" role="tabpanel" aria-labelledby="pills-{{$plan->id}}-tab" tabindex="0">
+                                    @php
+                                        $total = $unit->price;
+                                        $down_payment = $total * ($plan->down_payment / 100);
+                                        $monthly_payment = $total *  ($plan->months_percent/100);
+                                        $closing_payment = $total * ($plan->closing_payment / 100);
+                                    @endphp
+                                
+                                    <h4 class="fs-3 text-brown">{{$plan->name}}</h4>
+
+                                    <ul class="list-unstyled fs-4 mb-0">
+                                        <li>
+                                            <strong>+ {{__('Enganche')}} {{$plan->down_payment}}%: </strong>
+                                            <span>${{ number_format($down_payment) }} {{$unit->currency}}</span>
+                                        </li>
+                
+                                        @if ( isset($plan->months_amount) and isset($plan->months_quantity) )
+                                            <li>
+                                                <strong>+ {{$plan->months_quantity}} {{__('Mensualidades')}} de ${{ number_format($plan->months_amount) }}: </strong>
+
+                                                @php
+                                                    $months_total = $plan->months_amount * $plan->months_quantity;
+                                                @endphp
+
+                                                <div class="ms-4">${{ number_format($months_total) }} <small>{{$unit->currency}}</small> {{__('en Total')}}</div>
+                                            </li>
+                                        @endif
+                
+                                        <li>
+                                            <strong>+ {{__('Crédito hipotecario contra entrega')}}: </strong> 
+                                            <div class="ms-4">{{__('Saldo pendiente')}}</div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                @php
+                                    $i++;
+                                @endphp
+                            @endforeach
+                        
+                        </div>
+                    @endif
     
-                    @endforeach
                 </div>
 
 
@@ -192,6 +249,37 @@
         </div>
         
 
+        {{-- Amenidades --}}
+        <div class="row justify-content-center mb-6">
+            <div class="col-12 px-0">
+
+                <div class="glide" id="amenities-carousel">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides py-0 py-lg-5">
+
+                            <li class="glide__slide py-3 px-2">
+
+                                <img src="{{asset('/img/fogata.webp')}}" alt="Fogateros Calella Living" class="w-100">
+
+                            </li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="glide__arrows" data-glide-el="controls">
+                        <button class="glide__arrow glide__arrow--left btn btn-white rounded-circle" data-glide-dir="<">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+
+                        <button class="glide__arrow glide__arrow--right btn btn-white rounded-circle" data-glide-dir=">">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
 
     </div>
 

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1179 737">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: Montserrat-Bold, Montserrat;
+        font-size: 25.75px;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: 0em;
+      }
+
+      .cls-7 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        fill: #35422d;
+        stroke-width: 1.34px;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Content">
+    <g>
+      <polygon class="cls-3" points="512.46 537.79 513.63 666.25 692.02 665.24 690.87 537.79 512.46 537.79"/>
+      <polygon class="cls-3" points="330.5 537.79 330.5 667.28 513.63 666.25 512.46 537.79 330.5 537.79"/>
+      <polygon class="cls-3" points="690.87 537.79 692.02 665.24 870.54 664.24 869.39 537.79 690.87 537.79"/>
+      <polygon class="cls-3" points="1074.44 537.79 869.39 537.79 870.54 664.24 1074.44 663.09 1074.44 537.79"/>
+      <polygon class="cls-3" points="1074.44 537.79 1074.44 443.26 706.5 451.32 706.5 537.79 1074.44 537.79"/>
+      <polygon class="cls-3" points="675.92 537.79 706.5 537.79 706.5 451.32 445.67 453.4 445.67 537.79 675.92 537.79"/>
+      <polygon class="cls-3" points="445.67 537.79 152.17 537.79 152.17 453.62 445.67 453.4 445.67 537.79"/>
+      <polygon class="cls-3" points="445.67 453.4 445.67 360.38 152.17 362.11 152.17 453.62 445.67 453.4"/>
+      <polygon class="cls-3" points="445.67 360.38 706.5 358.37 706.5 451.32 445.67 453.4 445.67 360.38"/>
+      <polygon class="cls-3" points="706.5 358.37 1074.44 344.56 1074.44 443.26 706.5 451.32 706.5 358.37"/>
+      <polygon class="cls-3" points="706.5 358.37 706.5 253.4 1073.29 234.7 1074.44 344.56 706.5 358.37"/>
+      <polygon class="cls-3" points="706.5 253.4 706.5 358.37 445.67 360.38 445.67 256.86 706.5 253.4"/>
+      <polygon class="cls-3" points="445.67 256.86 152.17 261.17 152.17 362.11 445.67 360.38 445.67 256.86"/>
+      <text class="cls-1" transform="translate(372.01 607.38)"><tspan class="cls-5" x="0" y="0">L</tspan><tspan class="cls-9" x="15.45" y="0">ocal </tspan><tspan class="cls-6" x="78.46" y="0">0</tspan><tspan x="95.84" y="0">1</tspan></text>
+      <text class="cls-1" transform="translate(276.05 500.44)"><tspan x="0" y="0">1</tspan><tspan class="cls-5" x="10.09" y="0">0</tspan><tspan x="27.47" y="0">1</tspan></text>
+      <text class="cls-1" transform="translate(553.22 499.39)"><tspan x="0" y="0">1</tspan><tspan class="cls-8" x="10.09" y="0">0</tspan><tspan x="27.32" y="0">3</tspan></text>
+      <text class="cls-1" transform="translate(867.61 500.74)"><tspan x="0" y="0">105</tspan></text>
+      <text class="cls-1" transform="translate(276.05 411.84)"><tspan x="0" y="0">2</tspan><tspan class="cls-6" x="15.19" y="0">0</tspan><tspan x="32.57" y="0">1</tspan></text>
+      <text class="cls-1" transform="translate(553.22 410.73)"><tspan x="0" y="0">2</tspan><tspan class="cls-7" x="15.19" y="0">0</tspan><tspan class="cls-4" x="32.42" y="0">3</tspan></text>
+      <text class="cls-1" transform="translate(867.61 414.33)"><tspan x="0" y="0">205</tspan></text>
+      <text class="cls-1" transform="translate(276.05 314.32)"><tspan x="0" y="0">3</tspan><tspan class="cls-5" x="15.24" y="0">0</tspan><tspan x="32.62" y="0">1</tspan></text>
+      <text class="cls-1" transform="translate(553.22 311.73)"><tspan x="0" y="0">3</tspan><tspan class="cls-8" x="15.24" y="0">0</tspan><tspan x="32.47" y="0">3</tspan></text>
+      <text class="cls-1" transform="translate(867.61 312.04)"><tspan x="0" y="0">305</tspan></text>
+      <text class="cls-1" transform="translate(552.19 606.86)"><tspan class="cls-5" x="0" y="0">L</tspan><tspan class="cls-9" x="15.45" y="0">ocal </tspan><tspan class="cls-6" x="78.46" y="0">0</tspan><tspan x="95.84" y="0">2</tspan></text>
+      <text class="cls-1" transform="translate(730.65 606.36)"><tspan class="cls-5" x="0" y="0">L</tspan><tspan class="cls-9" x="15.45" y="0">ocal </tspan><tspan class="cls-7" x="78.46" y="0">0</tspan><tspan class="cls-4" x="95.68" y="0">3</tspan></text>
+      <text class="cls-1" transform="translate(921.86 605.85)"><tspan class="cls-5" x="0" y="0">L</tspan><tspan class="cls-9" x="15.45" y="0">ocal 04</tspan></text>
+      <rect class="cls-2" x=".5" y=".5" width="1178" height="736"/>
+    </g>
+  </g>
+</svg>

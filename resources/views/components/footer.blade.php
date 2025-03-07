@@ -1,8 +1,8 @@
 
 <footer class="row justify-content-evenly pt-5 pb-3 bg-darkgreen">
     
-    <div class="col-8 col-lg-3 mb-5 mb-lg-0">
-        <img src="..." alt="Logo de Calella Living" class="w-100">
+    <div class="col-8 col-lg-3 col-xxl-2 mb-5 mb-lg-0">
+        <img src="{{asset('/img/logo-calella-blanco.webp')}}" alt="Logo de Calella Living" class="w-100">
     </div>
 
     <div class="col-12 col-lg-3 mb-5 mb-lg-0 text-center text-lg-start px-4 px-lg-3">

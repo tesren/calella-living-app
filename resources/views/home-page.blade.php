@@ -5,6 +5,18 @@
     @endsection
     
 
+    <div class="row">
+
+        <div class="col-12 col-lg-4 bg-white py-2 py-lg-4 px-3 px-lg-5 ff-marquez text-brown fs-2 le-3 text-center">
+            {{__('Nuestro Inventario')}}
+        </div>
+
+        <div class="col-12 col-lg-8 bg-brown">
+
+        </div>
+
+    </div>
+
 
     <div class="row">
 
@@ -22,7 +34,7 @@
                         $section_img = 'media/'.$section->img_path;
                     @endphp 
 
-                    <div class="tab-pane fade @if($i==0) show active @endif" id="{{$section->id}}-tab-pane" role="tabpanel" tabindex="0">
+                    <div class="tab-pane fade @if($activeSection == $section->id) show active @endif" id="{{$section->id}}-tab-pane" role="tabpanel" tabindex="0">
 
                         <div class="position-relative overflow-x-scroll">
                             <img src="{{asset($section_img)}}" alt="" class="inventory-img">
@@ -36,9 +48,17 @@
                                         </polygon>
                                         
                                         <text x="{{$unit->shape->text_x ?? '0'}}" y="{{$unit->shape->text_y ?? '0' }}"
-                                            font-size="36" fill="#fff" class="fw-light">
+                                            font-size="30" fill="#fff" class="fw-light">
                     
-                                            <tspan class="fw-normal">{{$unit->name}}</tspan>
+                                            @if ($unit->status == 'Disponible')
+                                                <tspan class="fw-normal">
+                                                    {{$unit->name}}                                                    
+                                                </tspan>
+                                            @else
+                                                <tspan class="fw-normal" dx="-1.2em">
+                                                    {{$unit->status}}
+                                                </tspan>
+                                            @endif
                                             
                                         </text>
                                     </a>
@@ -48,9 +68,17 @@
                                         </polygon>
                                         
                                         <text x="{{$unit->shape->text_x ?? '0'}}" y="{{$unit->shape->text_y ?? '0' }}"
-                                            font-size="36" fill="#fff" class="fw-light">
+                                            font-size="28" fill="#fff" class="fw-light">
                     
-                                            <tspan class="fw-normal">{{$unit->name}}</tspan>
+                                                @if ($unit->status == 'Disponible')
+                                                    <tspan class="fw-normal">
+                                                        {{$unit->name}}                                                    
+                                                    </tspan>
+                                                @else
+                                                    <tspan class="fw-normal" dx="-1em">
+                                                        {{$unit->status}}
+                                                    </tspan>
+                                                @endif
                                             
                                         </text>
                                     </a>
@@ -102,16 +130,18 @@
                         @endphp
 
                         <div class="badge {{ $status_class }} fs-5 fw-light rounded-pill position-absolute top-0 end-0 me-4 mt-4 me-lg-5 mt-lg-5">
-                            {{__($unit->status)}}
+                            {{__($selected_unit->status)}}
                         </div>
 
                         <h2>
                             {{__('Depto.')}} {{$selected_unit->name}}
                         </h2>
     
-                        <div class="fs-2 fw-bold mb-4">
-                            ${{ number_format($selected_unit->price) }} {{$selected_unit->currency}}
-                        </div>
+                        @if ( $selected_unit->price != 0 and $selected_unit->status == 'Disponible' )
+                            <div class="fs-2 fw-bold mb-4">
+                                ${{ number_format($selected_unit->price) }} {{$selected_unit->currency}}
+                            </div>
+                        @endif
     
                         <h2 class="text-brown fs-3">{{__('Características')}}</h2>
     
@@ -126,7 +156,12 @@
                             </div>
     
                             <div class="col-12 col-lg-3">
-                                <i class="fa-solid fa-arrow-turn-up"></i> {{__('Piso')}} {{$selected_unit->floor}} 
+                                <i class="fa-solid fa-arrow-turn-up"></i> 
+                                @if ($selected_unit->floor == 0)
+                                    {{__('Planta baja')}}
+                                @else
+                                    {{__('Piso')}} {{$selected_unit->floor}}
+                                @endif 
                             </div>
     
                             <div class="col-12 mt-2">
@@ -164,8 +199,8 @@
     
                     </div>
     
-                    <div class="text-center my-5" wire:loading wire:target="updateUnit" wire:key="loading-indicator">
-                        <div class="align-self-center fs-4">
+                    <div class="text-center my-5">
+                        <div class="align-self-center fs-4"  wire:loading wire:target="updateUnit" wire:key="loading-indicator">
                             <i class="fa-solid fa-circle-notch fa-spin fa-3x"></i>
                             <div>{{__('Cargando...')}}</div>
                         </div>
@@ -212,16 +247,20 @@
                                 <div class="p-3">
                                     
                                     <div class="badge {{ $status_class }} fs-6 fw-light rounded-pill mb-2">
-                                        {{__($unit->status)}}
+                                        {{__($selected_unit->status)}}
                                     </div>
             
                                     <h2 class="fs-1">
                                         {{__('Departamento')}} {{$selected_unit->name}}
                                     </h2>
                 
-                                    <div class="fs-2 fw-bold mb-4">
-                                        ${{ number_format($selected_unit->price) }} {{$selected_unit->currency}}
-                                    </div>
+                                    @if ( $selected_unit->price != 0 and $selected_unit->status == 'Disponible' )
+
+                                        <div class="fs-2 fw-bold mb-4">
+                                            ${{ number_format($selected_unit->price) }} {{$selected_unit->currency}}
+                                        </div>
+
+                                    @endif
                 
                                     <h2 class="text-brown fs-3">{{__('Características')}}</h2>
                 
@@ -236,7 +275,12 @@
                                         </div>
                 
                                         <div class="col-12 mb-1">
-                                            <i class="fa-solid fa-arrow-turn-up"></i> {{__('Piso')}} {{$selected_unit->floor}} 
+                                            <i class="fa-solid fa-arrow-turn-up"></i> 
+                                            @if ($selected_unit->floor == 0)
+                                                {{__('Planta baja')}}
+                                            @else
+                                                {{__('Piso')}} {{$selected_unit->floor}}
+                                            @endif 
                                         </div>
                 
                                         <div class="col-12">

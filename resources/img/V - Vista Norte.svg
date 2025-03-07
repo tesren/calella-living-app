@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1179 737">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #35422d;
+        opacity: .52;
+        stroke-width: 1.34px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        font-family: Avenir-Heavy, Avenir;
+        font-size: 25.75px;
+        font-weight: 800;
+      }
+    </style>
+  </defs>
+  <g id="Content">
+    <g>
+      <polygon class="cls-2" points="463.66 535.85 577.35 556.77 577.35 403.48 464.23 392.02 463.66 535.85"/>
+      <polygon class="cls-2" points="878.17 612.13 878.17 433.96 577.35 403.48 577.35 556.77 878.17 612.13"/>
+      <polygon class="cls-2" points="404.5 385.96 291.17 417.12 174.17 409.47 174.17 553.96 297.17 569.96 404.5 524.96 463.66 535.85 464.23 392.02 404.5 385.96"/>
+      <polygon class="cls-2" points="577.35 403.2 878.17 433.19 878.17 321.64 577.35 312.11 577.35 403.2"/>
+      <polygon class="cls-2" points="464.56 308.53 464.23 391.92 577.35 403.2 577.35 312.11 464.56 308.53"/>
+      <polygon class="cls-2" points="404.5 385.96 464.23 391.92 464.56 308.53 404.5 306.63 296.33 322.13 174.17 322.13 174.17 409.47 291.17 417.12 404.5 385.96"/>
+      <polygon class="cls-2" points="577.35 312.11 878.17 321.64 878.17 213.87 577.35 220 577.35 312.11"/>
+      <polygon class="cls-2" points="404.5 306.63 464.56 308.53 464.9 222.29 404.5 223.52 296.33 219.36 174.17 222.37 174.17 322.13 296.33 322.13 404.5 306.63"/>
+      <polygon class="cls-2" points="464.56 308.53 577.35 312.11 577.35 220 464.9 222.29 464.56 308.53"/>
+      <polygon class="cls-2" points="577.35 97.3 577.35 220 878.17 213.87 878.17 70.2 577.35 97.3"/>
+      <polygon class="cls-2" points="577.35 220 577.35 97.3 465.36 107.38 464.9 222.29 577.35 220"/>
+      <polygon class="cls-2" points="404.5 223.52 464.9 222.29 465.36 107.38 404.5 112.87 296.33 97.71 174.17 109.71 174.17 222.37 296.33 219.36 404.5 223.52"/>
+      <text class="cls-3" transform="translate(707.18 503.64)"><tspan x="0" y="0">01</tspan></text>
+      <text class="cls-3" transform="translate(505.26 479.23)"><tspan x="0" y="0">02</tspan></text>
+      <text class="cls-3" transform="translate(303.95 485.81)"><tspan x="0" y="0">03</tspan></text>
+      <text class="cls-3" transform="translate(701.85 378.73)"><tspan x="0" y="0">102</tspan></text>
+      <text class="cls-3" transform="translate(498.22 362.88)"><tspan x="0" y="0">104</tspan></text>
+      <text class="cls-3" transform="translate(293.73 366.44)"><tspan x="0" y="0">106</tspan></text>
+      <text class="cls-3" transform="translate(701.85 274.32)"><tspan x="0" y="0">202</tspan></text>
+      <text class="cls-3" transform="translate(701.85 166.5)"><tspan x="0" y="0">302</tspan></text>
+      <text class="cls-3" transform="translate(498.22 274.32)"><tspan x="0" y="0">204</tspan></text>
+      <text class="cls-3" transform="translate(498.22 174.62)"><tspan x="0" y="0">304</tspan></text>
+      <text class="cls-3" transform="translate(295.4 274.32)"><tspan x="0" y="0">206</tspan></text>
+      <text class="cls-3" transform="translate(295.4 174.93)"><tspan x="0" y="0">306</tspan></text>
+      <rect class="cls-1" x=".5" y=".5" width="1178" height="736"/>
+    </g>
+  </g>
+</svg>

@@ -167,7 +167,7 @@ return [
     */
 
     'brand' => [
-        //'logo' => resource_path('/img/example-logo.svg'),
+        'logo' => resource_path('/img/logo-calella-living.svg'),
 
         'colors' => [
             "400" => "98, 107, 33, 0.5",

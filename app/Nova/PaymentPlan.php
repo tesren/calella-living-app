@@ -91,10 +91,12 @@ class PaymentPlan extends Resource
                 }
             ),
 
-            Number::make(__('Meses'), 'months_quantity')->sortable()->min(0)->max(1000)->nullable(),
+            Number::make(__('Meses'), 'months_quantity')->sortable()->min(0)->max(1000)->nullable()->placeholder('Cantidad de mensualidades'),
+
+            Number::make(__('Cantidad por mes'), 'months_amount')->sortable()->min(0)->step(0.01)->nullable()->placeholder('Pago por mes'),
 
 
-            Number::make(__('Pago final'), 'closing_payment')->min(0)->max(100)->placeholder('Porcentaje del Pago ginal')->rules('required')->sortable()->displayUsing(
+            Number::make(__('Pago final'), 'closing_payment')->min(0)->max(100)->placeholder('Porcentaje del Pago final')->sortable()->displayUsing(
                 function($value){
                     return $value.'%';
                 }

@@ -1,8 +1,10 @@
-<nav class="navbar navbar-dark navbar-expand-xl bg-brown py-0">
+<nav class="navbar navbar-dark navbar-expand-xl bg-darkgreen">
 
-    <div class="container-fluid ps-0">
+    <div class="container-fluid">
 
-        <a class="navbar-brand bg-white py-2 py-lg-4 px-3 px-lg-5 ff-marquez text-brown fs-2 le-3" href="{{route('home')}}" wire:navigate >{{__('Nuestro Inventario')}}</a>
+        <a class="navbar-brand" href="{{route('home')}}" wire:navigate >
+            <img width="100px" src="{{asset('img/logo-calella-blanco.webp')}}" alt="Logo de Calella living">
+        </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,15 +26,39 @@
                     @endphp
 
                     @foreach ( $sections as $section)
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link @if($i==0) active @endif "  href="#" id="section-{{$section->id}}-tab" data-bs-toggle="tab" data-bs-target="#{{$section->id}}-tab-pane" role="tab" aria-controls="{{$section->id}}-tab-pane" >{{__($section->name)}}</a>
-                        </li>
+                    
+                        @if ( strpos($route, 'home') != false )
+
+                            <li class="nav-item" role="presentation">
+                                <a class="px-4 nav-link @if($activeSection == $section->id) active @endif" wire:click="setActiveSection({{$section->id}})" href="#" id="section-{{$section->id}}-tab" data-bs-toggle="tab" data-bs-target="#{{$section->id}}-tab-pane" role="tab" aria-controls="{{$section->id}}-tab-pane" >
+                                    <i class="fa-regular fa-eye"></i> {{__($section->name)}}
+                                </a>
+                            </li>
+                            
+                        @else
+
+                            <li class="nav-item" role="presentation">
+                                <a class="px-4 nav-link @if($activeSection == $section->id) active @endif" wire:click="setActiveSection({{$section->id}})" href="#" id="section-{{$section->id}}-tab" data-bs-toggle="tab" data-bs-target="#{{$section->id}}-tab-pane" role="tab" aria-controls="{{$section->id}}-tab-pane" >
+                                    <i class="fa-regular fa-eye"></i> {{__($section->name)}}
+                                </a>
+                            </li>
+
+                        @endif
+
 
                         @php
                             $i++;
                         @endphp
                         
                     @endforeach
+
+                    <li class="nav-item">
+
+                        <a href="" class="px-3 nav-link">
+                            <i class="fa-solid fa-globe"></i> EN
+                        </a>
+
+                    </li>
                 
                 </ul>
 

@@ -8,3 +8,6 @@ window.bootstrap = bootstrap;
 
 import { Fancybox } from "@fancyapps/ui";
 window.Fancybox = Fancybox;
+
+import Glide from '@glidejs/glide'
+window.Glide = Glide;
