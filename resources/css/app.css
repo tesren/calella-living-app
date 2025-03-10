@@ -195,18 +195,26 @@ h1, h2, h3, h4, h5, h6{
 .glide__arrow--left{
 	position: absolute;
 	top: 50%;
-	transform: translateY(-100%);
+	transform: translateY(-50%);
 	left: -5%;
 }
 
 .glide__arrow--right{
 	position: absolute;
 	top: 50%;
-	transform: translateY(-100%);
+	transform: translateY(-50%);
 	right: -5%;
 }
 
+.svg-home{
+    width: 100%;
+}
+
 @media (max-width: 992px) {
+
+    .svg-home{
+        width: 200%;
+    }
 
     .mt-6{
         margin-top: 3.5rem !important;
@@ -228,5 +236,18 @@ h1, h2, h3, h4, h5, h6{
     .inventory-img{
         width: 200%;
     }
+
+    .glide__slide--active{
+		transform: scale(1);
+		transition: 0;
+	}
+	
+	.glide__arrow--left{
+		left: 0;
+	}
+	
+	.glide__arrow--right{
+		right: 0;
+	}
 
 }

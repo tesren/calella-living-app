@@ -11,9 +11,7 @@
             {{__('Nuestro Inventario')}}
         </div>
 
-        <div class="col-12 col-lg-8 bg-brown">
-
-        </div>
+        <div class="col-12 col-lg-8 bg-brown"></div>
 
     </div>
 
@@ -39,7 +37,7 @@
                         <div class="position-relative overflow-x-scroll">
                             <img src="{{asset($section_img)}}" alt="" class="inventory-img">
     
-                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" class="position-absolute start-0 top-0 px-0" viewBox="{{$section->viewbox}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" class="position-absolute start-0 top-0 px-0 svg-home" viewBox="{{$section->viewbox}}">
                     
                                 @foreach ($section->units as $unit)
                     
@@ -56,7 +54,7 @@
                                                 </tspan>
                                             @else
                                                 <tspan class="fw-normal" dx="-1.2em">
-                                                    {{$unit->status}}
+                                                    {{__($unit->status)}}
                                                 </tspan>
                                             @endif
                                             
@@ -76,7 +74,7 @@
                                                     </tspan>
                                                 @else
                                                     <tspan class="fw-normal" dx="-1em">
-                                                        {{$unit->status}}
+                                                        {{__($unit->status)}}
                                                     </tspan>
                                                 @endif
                                             
@@ -165,7 +163,7 @@
                             </div>
     
                             <div class="col-12 mt-2">
-                                <i class="fa-solid fa-compass"></i> {{__('Orientación')}} {{$selected_unit->orientation}} 
+                                <i class="fa-solid fa-compass"></i> {{__('Orientación')}}: {{__($selected_unit->orientation)}} 
                             </div>
     
                         </div>
@@ -284,7 +282,7 @@
                                         </div>
                 
                                         <div class="col-12">
-                                            <i class="fa-solid fa-compass"></i> {{__('Orientación')}} {{$selected_unit->orientation}} 
+                                            <i class="fa-solid fa-compass"></i> {{__('Orientación')}}: {{__($selected_unit->orientation)}} 
                                         </div>
                 
                                     </div>

@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="col-12 col-lg-4">
-                        <i class="fa-solid fa-compass"></i> {{__('Orientación')}} {{$unit->orientation}} 
+                        <i class="fa-solid fa-compass"></i> {{__('Orientación')}} {{__($unit->orientation)}} 
                     </div>
 
                 </div>
@@ -216,7 +216,7 @@
                 
                                         @if ( isset($plan->months_amount) and isset($plan->months_quantity) )
                                             <li>
-                                                <strong>+ {{$plan->months_quantity}} {{__('Mensualidades')}} de ${{ number_format($plan->months_amount) }}: </strong>
+                                                <strong>+ {{$plan->months_quantity}} {{__('Mensualidades de')}} ${{ number_format($plan->months_amount) }}: </strong>
 
                                                 @php
                                                     $months_total = $plan->months_amount * $plan->months_quantity;
@@ -258,21 +258,183 @@
                         <ul class="glide__slides py-0 py-lg-5">
 
                             <li class="glide__slide py-3 px-2">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 start-0 w-100 row justify-content-center">
 
-                                <img src="{{asset('/img/fogata.webp')}}" alt="Fogateros Calella Living" class="w-100">
+                                        <div class="col-8 col-lg-6 p-2 p-lg-3 rounded-bottom-3 bg-darkgreen">
 
+                                            <div class="row justify-content-center">
+                                                <div class="col-4 align-self-center">
+                                                    <img src="{{asset('img/icons/lobby.png')}}" alt="" class="w-100">
+                                                </div>
+                                                <div class="col-8 align-self-center">
+                                                    <div class="fs-5">{{__('Amenidades')}}:</div>
+                                                    <span class="fw-light">Lobby</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                         
+                                    </div>
+    
+                                    <img src="{{asset('/img/lobby-2.webp')}}" alt="Fogateros Calella Living" class="w-100 rounded-4 shadow object-fit-cover" style="min-height:35vh;">
+                                </div>
                             </li>
+
+                            {{-- <li class="glide__slide py-3 px-2">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 start-0 w-100 row justify-content-center">
+
+                                        <div class="col-8 col-lg-6 p-2 p-lg-3 rounded-bottom-3 bg-darkgreen">
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-4 align-self-center">
+                                                    <img src="{{asset('img/icons/sala-espera.png')}}" alt="" class="w-100">
+                                                </div>
+                                                <div class="col-8 align-self-center">
+                                                    <div class="fs-5">{{__('Amenidades')}}:</div>
+                                                    <span class="fw-light">{{__('Sala de espera')}}</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                         
+                                    </div>
+    
+                                    <img src="{{asset('/img/waiting-room.webp')}}" alt="Sala de espera Calella Living" class="w-100 rounded-4 shadow object-fit-cover" style="min-height:35vh;">
+                                </div>
+                            </li> --}}
                             
+                            <li class="glide__slide py-3 px-2">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 start-0 w-100 row justify-content-center">
+
+                                        <div class="col-8 col-lg-6 p-2 p-lg-3 rounded-bottom-3 bg-darkgreen">
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-4 align-self-center">
+                                                    <img src="{{asset('img/icons/rooofgarden.png')}}" alt="" class="w-100">
+                                                </div>
+                                                <div class="col-8 align-self-center">
+                                                    <div class="fs-5">{{__('Amenidades')}}:</div>
+                                                    <span class="fw-light">{{__('Roofgarden')}}</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                         
+                                    </div>
+    
+                                    <img src="{{asset('/img/roof-garden.webp')}}" alt="Roofgarden Calella Living" class="w-100 rounded-4 shadow object-fit-cover" style="min-height:35vh;">
+                                </div>
+                            </li>
+
+                            <li class="glide__slide py-3 px-2">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 start-0 w-100 row justify-content-center">
+
+                                        <div class="col-8 col-lg-6 p-2 p-lg-3 rounded-bottom-3 bg-darkgreen">
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-4 align-self-center">
+                                                    <img src="{{asset('/img/icons/jacuzzi.png')}}" alt="" class="w-100">
+                                                </div>
+                                                <div class="col-8 align-self-center">
+                                                    <div class="fs-5">{{__('Amenidades')}}:</div>
+                                                    <span class="fw-light">{{__('Jacuzzi')}}</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                         
+                                    </div>
+    
+                                    <img src="{{asset('img/jacuzzi.webp')}}" alt="Jacuzzi Calella Living" class="w-100 rounded-4 shadow object-fit-cover" style="min-height:35vh;">
+                                </div>
+                            </li>
+
+                            <li class="glide__slide py-3 px-2">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 start-0 w-100 row justify-content-center">
+
+                                        <div class="col-8 col-lg-6 p-2 p-lg-3 rounded-bottom-3 bg-darkgreen">
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-4 align-self-center">
+                                                    <img src="{{asset('/img/icons/bbq.png')}}" alt="" class="w-100">
+                                                </div>
+                                                <div class="col-8 align-self-center">
+                                                    <div class="fs-5">{{__('Amenidades')}}:</div>
+                                                    <span class="fw-light">{{__('BBQ')}}</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                         
+                                    </div>
+    
+                                    <img src="{{asset('/img/bbq.webp')}}" alt="BBQ Calella Living" class="w-100 rounded-4 shadow object-fit-cover" style="min-height:35vh;">
+                                </div>
+                            </li>
+
+                            <li class="glide__slide py-3 px-2">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 start-0 w-100 row justify-content-center">
+
+                                        <div class="col-8 col-lg-6 p-2 p-lg-3 rounded-bottom-3 bg-darkgreen">
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-4 align-self-center">
+                                                    <img src="{{asset('/img/icons/gimnasio.png')}}" alt="" class="w-100">
+                                                </div>
+                                                <div class="col-8 align-self-center">
+                                                    <div class="fs-5">{{__('Amenidades')}}:</div>
+                                                    <span class="fw-light">{{__('Gimnasio')}}</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                         
+                                    </div>
+    
+                                    <img src="{{asset('/img/gym.webp')}}" alt="Gimnasio Calella Living" class="w-100 rounded-4 shadow object-fit-cover" style="min-height:35vh;">
+                                </div>
+                            </li>
+
+                            <li class="glide__slide py-3 px-2">
+                                <div class="position-relative">
+                                    <div class="position-absolute top-0 start-0 w-100 row justify-content-center">
+
+                                        <div class="col-8 col-lg-6 p-2 p-lg-3 rounded-bottom-3 bg-darkgreen">
+
+                                            <div class="row justify-content-center">
+                                                <div class="col-3 align-self-center">
+                                                    <img src="{{asset('/img/icons/fogatero.png')}}" alt="" class="w-100">
+                                                </div>
+                                                <div class="col-9 align-self-center">
+                                                    <div class="fs-5">{{__('Amenidades')}}:</div>
+                                                    <span class="fw-light">{{__('Fogatero')}}</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                         
+                                    </div>
+    
+                                    <img src="{{asset('/img/fogata.webp')}}" alt="Fogatero Calella Living" class="w-100 rounded-4 shadow object-fit-cover" style="min-height:35vh;">
+                                </div>
+                            </li>
+
                         </ul>
                     </div>
 
                     <div class="glide__arrows" data-glide-el="controls">
                         <button class="glide__arrow glide__arrow--left btn btn-white rounded-circle" data-glide-dir="<">
-                            <i class="fa-solid fa-arrow-left"></i>
+                            <i class="fa-solid fa-2x fa-arrow-left"></i>
                         </button>
 
                         <button class="glide__arrow glide__arrow--right btn btn-white rounded-circle" data-glide-dir=">">
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i class="fa-solid fa-2x fa-arrow-right"></i>
                         </button>
                     </div>
 

@@ -5,12 +5,15 @@ namespace App\Livewire;
 use App\Models\Unit;
 use App\Models\Section;
 use Livewire\Component;
+use Livewire\Attributes\Url;
 
 class HomePage extends Component
 {
     public $selected_unit;
-    public $activeSection;
     public $sections;
+
+    #[Url]
+    public ?string $activeSection;
     
     public function setActiveSection($sectionId)
     {
@@ -27,7 +30,7 @@ class HomePage extends Component
 
     public function mount(){
         $this->sections = Section::all();
-        $this->activeSection = $this->sections->first()->id ?? null;
+        $this->activeSection =  request()->query('activeSection') ?? $this->sections->first()->id ?? null;
     }
 
     public function render()
