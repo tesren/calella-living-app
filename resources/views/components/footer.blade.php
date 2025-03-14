@@ -18,12 +18,12 @@
         
         <div class="fs-3 mb-3">{{__('Contacto')}}</div>
 
-        <a href="mailto:info@domusvallarta.com" class="link-light fs-5 text-decoration-none d-block mb-2 fw-light">
+        <a href="mailto:info@calellaliving.com" class="link-light fs-5 text-decoration-none d-block mb-2 fw-light">
             <i class="fa-solid fa-envelope"></i> info@calellaliving.com
         </a>
 
-        <a href="tel:+523322005523" class="link-light fs-5 text-decoration-none d-block mb-2 fw-light">
-            <i class="fa-solid fa-phone"></i> +52 332 555 5555
+        <a href="tel:+524491383170" class="link-light fs-5 text-decoration-none d-block mb-2 fw-light">
+            <i class="fa-solid fa-phone"></i> +52 449 138 3170
         </a>
 
         <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook page" class="link-light text-decoration-none fs-4 me-3">

@@ -22,7 +22,6 @@ class HomePage extends Component
 
     public function updateUnit($unitID)
     {
-        $this->selected_unit = null; // Limpiar antes de asignar para forzar renderizado
         $this->selected_unit = Unit::find($unitID);
         $this->activeSection = $this->selected_unit->section_id;
 
@@ -35,6 +34,8 @@ class HomePage extends Component
 
     public function render()
     {
-        return view('home-page');
+        $all_units = Unit::all();
+
+        return view('home-page', compact('all_units') );
     }
 }

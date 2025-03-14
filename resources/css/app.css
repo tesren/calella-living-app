@@ -185,6 +185,11 @@ h1, h2, h3, h4, h5, h6{
     color: white !important;
 }
 
+.home-nav .nav-pills .nav-link.active, .home-nav .nav-pills .show > .nav-link {
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: #26351c;
+    border: 1px solid white;
+}
 
 .glide__slide--active{
 	transform: scale(1.25);

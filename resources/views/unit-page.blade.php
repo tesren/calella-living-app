@@ -72,7 +72,13 @@
                     {{__($unit->status)}}
                 </div>
 
-                <h1 class="text-brown mb-0">{{__('Departamento')}}  {{$unit->name}}</h1>
+                <h1 class="text-brown mb-0">
+                    @if ( in_array($unit->unitType->id, [10,11,12,13] ) )
+                        {{$unit->name}}
+                    @else
+                        {{__('Departamento')}}  {{$unit->name}}
+                    @endif
+                </h1>
                 
                 @if ( $unit->price != 0 and $unit->status == 'Disponible' )
                     <div class="fs-1 fw-semibold mb-5">${{ number_format($unit->price) }} {{$unit->currency}}</div>
@@ -82,9 +88,11 @@
 
                 <div class="row px-0 fs-4">
 
-                    <div class="col-6 col-lg-3">
-                        <i class="fa-solid fa-bed"></i> {{$unit->unitType->bedrooms}} {{__('Recámaras')}}
-                    </div>
+                    @if ($unit->unitType->bedrooms > 0)
+                        <div class="col-6 col-lg-3">
+                            <i class="fa-solid fa-bed"></i> {{$unit->unitType->bedrooms}} {{__('Recámaras')}}
+                        </div>
+                    @endif
 
                     <div class="col-6 col-lg-2">
                         <i class="fa-solid fa-bath"></i> {{$unit->unitType->bathrooms}} {{__('Baños')}}
@@ -158,7 +166,7 @@
                 <div class="sticky-top">
 
                     <div class="text-center">
-                        <a href="#contact-section" class="btn btn-green fs-5 py-3 px-5 my-5 ff-marquez">
+                        <a href="https://wa.me/524491383170?text={{ urlencode(__("Hola, vengo del sitio web de Calella Living")) }}" target="_blank" rel="noopener noreferrer" class="btn btn-green fs-5 py-3 px-5 my-5 ff-marquez">
                             <i class="fa-brands fa-whatsapp"></i> {{__('Contáctanos por WhatsApp')}}
                         </a>
                     </div>
@@ -449,10 +457,29 @@
 
 
 @script 
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            // Your custom options
+        });
 
-<script>
-    Fancybox.bind("[data-fancybox]", {
-        // Your custom options
-    });
-</script>
+        var listings_glide = document.getElementById('amenities-carousel');
+
+        if(listings_glide){
+
+            var listings_carousel = new Glide('#amenities-carousel', {
+                type: 'carousel',
+                startAt: 0,
+                perView: 3,
+                focusAt: 'center',
+                breakpoints: {
+                    992: {
+                    perView: 1
+                    }
+                }
+            });
+
+            listings_carousel.mount();
+
+        }
+    </script>
 @endscript
